@@ -1,5 +1,5 @@
 const express= require ('express')
-
+const bcrypt=require('bcrypt')
 const app=express()
 
 const mysql = require('mysql')
@@ -18,7 +18,7 @@ myconnection.connect((err, connection) => {
         console.log("database is  connected successfully");
     }
 })
-myconnection.query("CREATE TABLE IF NOT EXISTS users (userid INT NOT NULL AUTO_INCREMENT,email VARCHAR(255),fullname VARCHAR(255),password VARCHAR(255),phone VARCHAR(255),PRIMARY KEY (userid));",
+myconnection.query("CREATE TABLE IF NOT EXISTS users (userid INT NOT NULL AUTO_INCREMENT,email VARCHAR(255),fullname VARCHAR(255),password VARCHAR(255),phone VARCHAR(255),dob DATE,PRIMARY KEY (userid));",
    (sqlerr,data)=>{
     if(sqlerr){
      console.log(sqlerr.message);
@@ -50,8 +50,24 @@ app.post("/signup", (req,res)=>{
     //hash the password,confirm with password,email validation ,sql injection
     //input validation on the backend 
     //save data on database
-    //
-    res.send('data received')
+    console.log(req.body);
+    
+    if(req.body.password === req.body.confirm_password){
+        //proceed
+        let sqlStatement=`INSERT INTO users (email,fullname,password,phone,dob) VALUES("${req.body.email}", "${req.body.fullname}", "${req.body.password}", "${req.body.phone}", "${req.body.date}")`//template literals
+        myconnection.query(sqlStatement,(sqlerr) => {
+            if (sqlerr){
+                res.send("database Error")
+            }else{
+                res.send("sign up successful")
+            }
+        })
+        
+    }
+    else{
+        res.send("make sure that password and confirm password match")
+    }
+    
 })
 app.get("/login", (req,res)=>{
     //receive data from client
@@ -59,6 +75,11 @@ app.get("/login", (req,res)=>{
     //what are sessios and why is http said to be statelss
     res.render("login.ejs")
 })
+app.post("/login",(req, res) => {
+    const user = users.find(user => user.id === req.params.id);
+    if (!user || user.password !== req.body.password) {
+      return res.status(401).json({ error: "Email or Password does not exist"});
+}})
 
 app.get("/signup", (req,res)=>{
    
