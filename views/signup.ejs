@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/signup.css">
+    
+</head>
+<body>
+    
+    
+    <%-  include('_nav.ejs')%>  
+    
+
+    <form action="http://localhost:3000/signup" method="post">
+        <div>
+            <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname">
+        </div>
+        
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" name="password" id="pass">
+        </div>
+        <div>
+            <label for="cpass">Confirm Password</label>
+            <input type="password" name="password" id="cpass">
+        </div>
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="date" id="dob">
+        </div>
+       
+        <button type="submit">Sign up</button>
+        
+        
+    </form>
+</body>
+</html>

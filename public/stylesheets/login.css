@@ -1,0 +1,59 @@
+body {
+    margin: 0%;
+     background-image: url('../images/wallhaven-6d7xmx.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+img{
+ overflow: visible;
+ height: 100vh;
+ margin: 0;
+
+}
+h1{
+ text-align: center;
+ text-decoration: underline;
+}
+h3{
+ text-align: center;
+ margin-top: 30px;
+}
+form {
+width: 300px;
+padding: 20px;
+border: 2px solid #ccc;
+border-radius: 5px;
+background-image: radial-gradient(rgba(209, 14, 151, 0.967), #fff);
+box-shadow: 0 0 10px #f00;
+margin: 0 auto;
+margin-top: 70px;
+text-align: center;
+
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: none;
+border-radius: 5px;
+box-shadow: 0 0 5px #ccc;
+}
+
+button[type="submit"] {
+width: 100%;
+padding: 8px;
+background-color: #f00;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}

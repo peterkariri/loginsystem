@@ -1,0 +1,57 @@
+body {
+   background-image: url('../images/wallhaven-1poo61.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  
+  }
+  
+  h1 {
+    font-size: 48px;
+    color:indigo;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 24px;
+    color: rgb(92, 86, 86);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    text-decoration: underline;
+  }
+  ul{
+      display: flex;
+      text-align: center;
+      gap: 25%;
+      list-style: none;
+      text-decoration: dashed;
+      color:red;
+      font-size: 22px;
+      justify-content: center;
+  }
+  
+  button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff6666;
+  }
