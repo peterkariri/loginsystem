@@ -12,8 +12,9 @@
     
     <%-  include('_nav.ejs')%>  
     
-
+    <% if(locals.error) {%> 
     <form action="http://localhost:3000/signup" method="post">
+        <p style="color: red;"><%= errorMeassage %></p>
         <div>
             <label for="fullname">Fullname</label>
             <input type="text" name="fullname" id="fullname">
@@ -44,5 +45,7 @@
         
         
     </form>
+    <% } %>>
+   
 </body>
 </html>
